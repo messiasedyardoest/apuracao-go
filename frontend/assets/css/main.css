@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Tokens da Central de Solucoes (FrontComercialV3), subconjunto. */
+:root {
+  color-scheme: light;
+
+  --bg:         #f1ede9;
+  --shell:      #ffffff;
+  --text:       #1a0e0c;
+  --text-dim:   #6b635c;
+  --text-muted: #a39c95;
+  --tag-bg:     #f5efed;
+  --border:     rgba(26, 14, 12, 0.08);
+  --success:    #1a8a4f;
+  --warning:    #b45309;
+  --red:        #C8372D;
+
+  --mapa-fundo: #f7f4f0;
+  --sem-votos:  #ddd6cf;
+
+  --shadow-shell: 0 1px 2px rgba(26, 14, 12, 0.04), 0 8px 24px -12px rgba(26, 14, 12, 0.08);
+  --r-shell: 18px;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+.cartao {
+  border: 1px solid var(--border);
+  border-radius: var(--r-shell);
+  background: var(--shell);
+  box-shadow: var(--shadow-shell);
+}
+
+.btn {
+  @apply inline-flex items-center justify-center gap-2 rounded-lg border px-3 py-2 text-sm font-medium transition disabled:cursor-not-allowed disabled:opacity-60;
+  border-color: var(--border);
+  background: var(--shell);
+  color: var(--text);
+}
+.btn:hover:not(:disabled) { background: var(--tag-bg); }
+
+/* Botoes da barra de titulo (janela Frameless), no padrao do Windows 11. */
+.controle-janela {
+  @apply grid h-full w-12 place-items-center transition-colors;
+  color: var(--text-dim);
+}
+.controle-janela:hover { background: var(--tag-bg); color: var(--text); }
+.controle-fechar:hover { background: #c42b1c; color: #fff; }
+
+.maplibregl-popup-content {
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-family: inherit;
+  box-shadow: 0 8px 24px -8px rgba(26, 14, 12, 0.25);
+}
